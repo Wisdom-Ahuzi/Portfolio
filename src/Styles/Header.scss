@@ -1,0 +1,199 @@
+@import "./config";
+
+.header-Container {
+  height: 100%;
+  position: sticky;
+  z-index: 3;
+  @include display();
+  border-bottom: $nav-BorderBottom;
+  background: rgba(39, 37, 37, 0.17);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.6px);
+  -webkit-backdrop-filter: blur(5.6px);
+  border-bottom: 1px solid rgba(154, 154, 154, 0.28);
+  border-top: 1.5px solid $secondary-Purple;
+  .desktop-Nav-Container {
+    height: 100%;
+    width: 93%;
+    @include display($justify: space-around);
+    .wisdom {
+      @extend %wisdom-Tag;
+      text-decoration: none;
+    }
+
+    .navlinks-Container {
+      width: auto;
+      @include display($justify: unset);
+      gap: 50px;
+
+      .resume {
+        border: 1px solid $secondary-Purple;
+        padding: 4px 7px;
+        border-radius: 4px;
+
+        &:hover {
+          border: 1.5px solid $secondary-Purple;
+        }
+      }
+
+      & > span,
+      a {
+        @extend %Links;
+      }
+      .icon {
+        font-size: 24px;
+        padding: 8px 10px;
+        @include display();
+        &:hover {
+          background-color: $link-Hover;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+  .mobile-Nav-Container {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .desktop-Nav-Container {
+    display: none !important;
+  }
+  .mobile-Nav-Container {
+    height: inherit !important;
+    display: flex !important;
+    width: 90% !important;
+    margin: 0 auto;
+    flex-direction: column !important;
+    .mobile-Container {
+      width: 100%;
+      height: inherit;
+      @include display($justify: space-between);
+      a {
+        width: auto;
+        font-size: 21px;
+        line-height: 28px;
+        color: $secondary-Purple;
+        font-weight: 400;
+        font-family: "Gochi Hand", "Courier New", Courier, monospace;
+        text-decoration: none;
+      }
+      .svg {
+        width: auto;
+        color: $background-White;
+      }
+    }
+    .mobile-Links-Container {
+      display: none !important;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 100vw;
+      height: 100vh;
+      @include display($direction: column, $justify: unset);
+      background-color: $background-Black;
+
+      .mobile-Container-Two {
+        width: 90%;
+        height: 10%;
+        @include display($justify: space-between);
+        a {
+          width: auto;
+          font-size: 21px;
+          line-height: 28px;
+          color: $secondary-Purple;
+          font-weight: 400;
+          font-family: "Gochi Hand", "Courier New", Courier, monospace;
+          text-decoration: none;
+        }
+        .svg {
+          width: auto;
+          color: $background-White;
+        }
+      }
+      .links-Body {
+        height: 90%;
+        @include display($align: unset);
+        .inner-Links-Body {
+          .res {
+            border: 1px solid $secondary-Purple;
+            padding: 3px 5px;
+            border-radius: 5px;
+          }
+          width: 90%;
+          padding-top: 5%;
+          @include display($direction: column, $justify: unset);
+          gap: 30px;
+          a {
+            width: auto;
+            font-size: 18px;
+            color: #f3f4f6;
+            line-height: 25px;
+            font-weight: 400;
+            text-decoration: none;
+            font-family: "IBM Plex Mono", system-ui, -apple-system,
+              BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+              "Open Sans", "Helvetica Neue", sans-serif;
+          }
+          .handler {
+            @include display($justify: unset);
+            gap: 25px;
+            width: auto;
+            height: 20%;
+            svg {
+              color: $background-White;
+              width: 25px;
+              height: 25px;
+            }
+          }
+          .all-Rights-Container {
+            width: auto;
+            height: auto;
+            @include display($justify: unset, $direction: column);
+            small {
+              font-family: "IBM Plex Mono", system-ui, -apple-system,
+                BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+                Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+              font-weight: 400;
+              font-size: 11px;
+              line-height: 14px;
+              color: $text-White;
+              text-decoration: none;
+              cursor: default;
+              transition: all 0.5s ease;
+            }
+            .rights-Reserved {
+              width: auto;
+              height: auto;
+              @include display($justify: unset);
+              gap: 4px;
+              span {
+                width: auto;
+                svg {
+                  width: 11px;
+                  color: $text-White;
+                  gap: 10px !important;
+                  height: 11px;
+                }
+              }
+            }
+            .built {
+              width: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#open {
+  display: flex !important;
+}
+#close {
+  display: none !important;
+}
+#open {
+  width: 100% !important;
+}

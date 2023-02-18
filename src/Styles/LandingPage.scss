@@ -1,0 +1,594 @@
+@import "./config";
+
+* {
+  scroll-behavior: smooth;
+}
+
+.landingpage-Container {
+  width: 100%;
+  height: 100%;
+  @include display($align: unset);
+
+  .inner-Landingpage-Container {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    .header-Header-Container {
+      height: 800px;
+      @include display($direction: column, $justify: space-around);
+      .header-Title {
+        height: 280px;
+        @include display(
+          $direction: column,
+          $align: unset,
+          $justify: space-between
+        );
+        span {
+          @extend %element-Tags;
+        }
+        h1 {
+          @extend %Intro-Home;
+        }
+      }
+      .header-Body {
+        height: 280px;
+        @include display(
+          $direction: column,
+          $align: unset,
+          $justify: space-around
+        );
+        span {
+          @extend %element-Tags;
+        }
+        h3 {
+          @extend %Intro-Ptag;
+          span {
+            @extend %Intro-Ptag;
+            padding-left: 0;
+            color: $link-Hover;
+          }
+        }
+      }
+    }
+
+    .education-Container {
+      height: auto;
+      @include display($direction: column, $justify: unset);
+      gap: 100px;
+      .education {
+        height: 65%;
+        @include display($direction: column, $justify: unset);
+        gap: 20px;
+        h2 {
+          @extend %topic-Headers;
+        }
+        .education-Institutions {
+          @include display();
+          .aptech-Container {
+            width: 100%;
+            height: auto;
+            @include display($direction: column);
+            gap: 30px;
+            .aptech {
+              width: 83%;
+              border: 1px solid $link-Hover;
+              border-radius: 5px;
+              width: 100%;
+              height: auto;
+              padding: 30px 0;
+              @include display($direction: column);
+              gap: 6px;
+              .aptech-Items {
+                width: 93%;
+                @include display($direction: column);
+                gap: 8px;
+                .education-Title {
+                  @include display($justify: space-between);
+                  h3 {
+                    width: auto;
+                    @extend %Intro-Home;
+                    font-size: 26px;
+                    line-height: 32px;
+                    padding-left: 0;
+                  }
+                  span {
+                    width: auto;
+                    @extend %element-Tags;
+                    color: $text-White;
+                    font-size: 12px;
+                    font-family: "IBM Plex Mono", -apple-system,
+                      BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+                      Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+                  }
+                }
+                .education-Location {
+                  h5 {
+                    line-height: 15px;
+                    @extend %element-Tags;
+                    font-family: "IBM Plex Mono", -apple-system,
+                      BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+                      Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+                  }
+                  p {
+                    line-height: 20px;
+                    @extend %element-Tags;
+                    font-size: 15px;
+                    color: $link-Hover;
+                    font-family: "IBM Plex Mono", -apple-system,
+                      BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+                      Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+                  }
+                }
+                .education-Body {
+                  @extend %Intro-Ptag;
+                  line-height: 20px;
+                  padding-left: 0px;
+                }
+              }
+
+              &:hover {
+                border: 1.3px solid $secondary-Purple;
+                cursor: default;
+              }
+            }
+          }
+        }
+      }
+      .awards-Container {
+        height: auto;
+        @include display($direction: column, $justify: unset);
+        gap: 20px;
+        h3 {
+          @extend %topic-Headers;
+        }
+        .awards {
+          @include display($justify: unset, $direction: column);
+          gap: 20px;
+          .inner-Awards {
+            border: 1px solid $link-Hover;
+            border-radius: 5px;
+            width: 100%;
+            height: 140px;
+            @include display();
+            .award-Item {
+              width: 93%;
+              .competition {
+                @include display($justify: space-between);
+                h4 {
+                  width: auto;
+                  @extend %Intro-Home;
+                  font-size: 26px;
+                  line-height: 32px;
+                  padding-left: 0;
+                }
+                span {
+                  width: auto;
+                  @extend %element-Tags;
+                  font-family: "IBM Plex Mono", -apple-system,
+                    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+                    Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+                  color: $text-White;
+                  font-size: 12px;
+                }
+              }
+              .competition-Description {
+                p {
+                  line-height: 20px;
+                  @extend %element-Tags;
+                  font-family: "IBM Plex Mono", -apple-system,
+                    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+                    Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+                  font-size: 15px;
+                  color: $link-Hover;
+                }
+              }
+            }
+            &:hover {
+              border: 1.3px solid $secondary-Purple;
+              cursor: default;
+            }
+          }
+        }
+      }
+    }
+
+    .skill-Tech {
+      height: 1100px;
+      @include display($direction: column, $align: flex-start, $justify: unset);
+      gap: 190px;
+
+      .skill-Container {
+        cursor: pointer;
+        height: 40%;
+        @include display($direction: column, $justify: unset);
+        gap: 40px;
+
+        h3 {
+          @extend %topic-Headers;
+        }
+
+        .skills-List-Container {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 10px;
+          .skill {
+            width: inherit;
+            height: 210px;
+            border-radius: 5px;
+            border: 1px solid rgb(62, 38, 123);
+            @include display($direction: column);
+            .skills {
+              width: 80%;
+              @include display($direction: column);
+              gap: 10px;
+              .skill-Icon-Container {
+                @include display($justify: unset);
+                span {
+                  width: 35px;
+                  font-size: 25px;
+                  svg {
+                    width: 25px;
+                    height: 25px;
+                  }
+                }
+              }
+            }
+
+            p {
+              padding-left: 0;
+              @extend %Intro-Ptag;
+            }
+
+            &:hover {
+              border: 1.3px solid $secondary-Purple;
+              @extend %transition;
+            }
+          }
+        }
+      }
+
+      .technologies-Container {
+        height: 700px;
+        @include display($direction: column, $justify: unset);
+        gap: 20px;
+        h3 {
+          height: 50px;
+          @extend %topic-Headers;
+          padding-left: 0;
+        }
+        p {
+          @extend %Intro-Ptag;
+          padding-left: 0;
+          font-size: 12px;
+        }
+        .tech-List-Container {
+          cursor: pointer;
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          gap: 10px;
+          .technology {
+            width: 98%;
+            height: 80px;
+            @include display();
+            border-radius: 5px;
+            border: 1px solid rgb(62, 38, 123);
+            p {
+              @include display();
+              @extend %Intro-Ptag;
+              padding-left: 0;
+              font-size: 14px;
+            }
+            &:hover {
+              border: 1.3px solid $secondary-Purple;
+              @extend %transition;
+            }
+          }
+        }
+      }
+    }
+
+    .featured-Projects-Container {
+      @include display($direction: column, $justify: unset);
+      gap: 20px;
+      h3 {
+        height: 50px;
+        @extend %topic-Headers;
+        padding-left: 0;
+      }
+      p {
+        @extend %Intro-Ptag;
+        padding-left: 0;
+        font-size: 12px;
+      }
+
+      .projects-Container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        width: 127%;
+        .project {
+          width: 100%;
+          height: 100%;
+          border: 1px solid $link-Hover;
+          border-radius: 5px;
+          @include display($align: unset);
+          transition-property: all;
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-duration: 0.5s;
+          .inner-Project-Container {
+            width: 95%;
+            @include display($direction: column, $justify: space-between);
+            gap: 10px;
+
+            .img {
+              z-index: 0;
+              margin-top: 15px;
+              width: 100%;
+              height: 360px;
+              object-fit: cover;
+              border-radius: 0.375rem;
+              object-position: center;
+              transition-property: all;
+              transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+              transition-duration: 0.5s;
+              &:hover {
+                transform: scale(1.02);
+              }
+            }
+
+            .project-Name {
+              width: 100%;
+              @include display($justify: unset);
+              gap: 7px;
+              p {
+                width: auto;
+                @extend %Intro-Ptag;
+                padding-left: 0;
+              }
+              a {
+                width: auto;
+                @extend %Links;
+                color: $secondary-Purple;
+                font-size: 18px;
+                @include display();
+                .redirect {
+                  width: 18px;
+                  height: 18px;
+                  color: $secondary-Purple;
+                }
+              }
+            }
+            .description {
+              @include display($direction: column, $justify: unset);
+
+              small {
+                @extend %Intro-Ptag;
+                padding-left: 0;
+                font-size: 11px;
+                color: $description-White;
+              }
+              p {
+                @extend %Intro-Ptag;
+                padding-left: 0;
+              }
+            }
+            .git-View {
+              @include display($justify: unset);
+              padding-bottom: 20px;
+              gap: 5px;
+              a {
+                width: auto;
+                @extend %Links;
+              }
+            }
+          }
+
+          &:hover {
+            border: 1.3px solid $secondary-Purple;
+            @extend %transition;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .inner-Landingpage-Container {
+    width: 90% !important;
+    .header-Header-Container {
+      height: 650px !important;
+      .header-Title {
+        height: auto !important;
+        h1 {
+          padding: 20px 0;
+          font-size: 32px !important;
+          line-height: 39px !important;
+        }
+      }
+    }
+
+    .education-Container {
+      .education
+        .education-Institutions
+        .aptech-Container
+        .aptech
+        .aptech-Items {
+        gap: 12px !important;
+        .education-Title {
+          align-items: flex-start !important;
+          flex-direction: column !important;
+          h3 {
+            font-size: 21px !important;
+          }
+        }
+        .education-Body {
+          font-size: 14px !important;
+        }
+      }
+
+      .awards-Container .awards .inner-Awards .award-Item {
+        .competition {
+          align-items: flex-start !important;
+          flex-direction: column !important;
+          h4 {
+            font-size: 21px !important;
+          }
+        }
+      }
+    }
+
+    .skill-Tech {
+      gap: 50px !important;
+      height: auto !important;
+      .skill-Container {
+        height: auto !important;
+        gap: 10px !important;
+      }
+      .skills-List-Container {
+        grid-template-columns: repeat(1, 1fr) !important;
+        gap: 20px !important;
+        .skill {
+          height: 180px !important;
+          .skills {
+            width: 90% !important;
+            .skill-Text {
+              font-size: 14px !important;
+              line-height: 21px !important;
+            }
+          }
+        }
+      }
+      .technologies-Container {
+        height: auto !important;
+        .tech-List-Container {
+          grid-template-columns: repeat(4, 1fr) !important;
+        }
+      }
+    }
+
+    .projects-Container {
+      width: 103% !important;
+      grid-template-columns: repeat(1, 1fr) !important;
+      .inner-Project-Container {
+        gap: 10px !important;
+        .img {
+          height: 100% !important;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .inner-Landingpage-Container .skill-Tech {
+    .technologies-Container {
+      .tech-List-Container {
+        grid-template-columns: repeat(3, 1fr) !important;
+      }
+    }
+  }
+}
+@media screen and (max-width: 530px) {
+  .inner-Landingpage-Container {
+    .header-Header-Container {
+      height: 850px !important;
+      gap: 70px !important;
+      .header-Title {
+        height: auto !important;
+        h1 {
+          padding: 20px 0;
+          font-size: 28px !important;
+          line-height: 39px !important;
+        }
+      }
+      .header-Body {
+        h3 {
+          font-size: 15px !important;
+        }
+      }
+    }
+
+    .education-Container {
+      gap: 60px !important;
+      .education {
+        gap: 0px !important;
+        .education-Institutions {
+          .aptech-Container {
+            .aptech {
+              .aptech-Items {
+                .education-Title {
+                  gap: 1px !important;
+                  h3 {
+                    font-size: 19px !important;
+                    line-height: 28px !important;
+                  }
+                  span {
+                    font-size: 11px !important;
+                  }
+                }
+                .education-Location {
+                  h5 {
+                    font-size: 14px !important;
+                  }
+                  p {
+                    font-size: 13px !important;
+                  }
+                }
+                .education-Body {
+                  font-size: 13px !important;
+                }
+              }
+            }
+          }
+        }
+      }
+      .awards-Container {
+        gap: 0px !important;
+
+        .awards {
+          .inner-Awards {
+            .award-Item {
+              .competition {
+                h4 {
+                  font-size: 19px !important;
+                  line-height: 28px !important;
+                }
+                span {
+                  font-size: 11px !important;
+                }
+              }
+              .competition-Description {
+                p {
+                  font-size: 13px !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .skill-Tech {
+      .skill-Container {
+        gap: 0px !important;
+      }
+      .technologies-Container {
+        gap: 3px !important;
+        .tech-List-Container {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
+      }
+    }
+
+    .featured-Projects-Container {
+      gap: 20px !important;
+      p {
+        line-height: 20px !important;
+      }
+      .projects-Container .project .inner-Project-Container .description p {
+        font-size: 13px !important;
+      }
+    }
+  }
+}

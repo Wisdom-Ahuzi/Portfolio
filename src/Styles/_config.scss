@@ -1,0 +1,92 @@
+//Dark Mode <Default Mode> Colours
+// @import url("https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Sono:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gochi+Hand&family=IBM+Plex+Mono:wght@500&family=Sono:wght@500&display=swap");
+$background-Black: #1d1d1d;
+$text-White: rgb(214, 215, 216);
+$nav-BorderBottom: rgb(25, 25, 25);
+$secondary-Purple: rgb(86, 52, 170);
+$description-White: rgb(151, 157, 169);
+$link-Hover: rgba(107, 81, 171, 0.747);
+//Light Mode Colours
+$background-White: rgb(249, 250, 251);
+$text-Black: rgb(0, 0, 0);
+$description-Black: rgb(156, 163, 175);
+
+//"Wisdom"
+%wisdom-Tag {
+  font-size: 21px;
+  line-height: 28px;
+  color: $secondary-Purple;
+  font-weight: 400;
+  font-family: "Gochi Hand", "Courier New", Courier, monospace;
+}
+
+%element-Tags {
+  font-size: 16px;
+  line-height: 25px;
+  color: $secondary-Purple;
+  font-weight: 800;
+  font-family: "Gochi Hand", "Courier New", Courier, monospace;
+}
+
+%Links {
+  font-family: "IBM Plex Mono", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: $text-White;
+  text-decoration: none;
+  cursor: default;
+  transition: all 0.5s ease;
+  &:hover {
+    color: white;
+    transition: all 0.5s ease;
+  }
+  cursor: pointer;
+}
+
+%Intro-Home {
+  font-family: "IBM Plex Mono", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  font-weight: 800;
+  font-size: 51px;
+  line-height: 73px;
+  color: $text-White;
+  padding-left: 25px;
+}
+
+%Intro-Ptag {
+  font-family: "IBM Plex Mono", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+  color: $text-White;
+  padding-left: 25px;
+}
+
+%topic-Headers {
+  font-family: "IBM Plex Mono", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 800;
+  font-size: 21px;
+  line-height: 73px;
+  color: $text-White;
+}
+
+//Utilities
+@mixin display($direction: row, $align: center, $justify: center) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+%transition {
+  transition: all 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
