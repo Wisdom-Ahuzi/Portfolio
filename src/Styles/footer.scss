@@ -6,7 +6,7 @@ footer {
   background-color: $background-Black;
   @include display($align: unset);
   .footer-Container {
-    width: auto;
+    width: 75%;
     @include display(
       $direction: column,
       $align: space-between,
@@ -32,7 +32,7 @@ footer {
         @include display($justify: flex-start);
         gap: 10px;
         span {
-          width: auto;
+          width: 30px;
           font-size: 25px;
         }
         p {
@@ -53,9 +53,10 @@ footer {
         .li {
           width: auto;
           @include display($align: flex-end);
-          gap: 20px;
+          gap: 10px;
           a {
             text-decoration: none;
+            width: 30px;
             @extend %Links;
             font-size: 25px;
           }

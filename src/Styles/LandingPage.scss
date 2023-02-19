@@ -379,7 +379,11 @@
               @include display($justify: unset);
               padding-bottom: 20px;
               gap: 5px;
-              a {
+              a:nth-child(1) {
+                width: 30px;
+                @extend %Links;
+              }
+              a:nth-child(2) {
                 width: auto;
                 @extend %Links;
               }
