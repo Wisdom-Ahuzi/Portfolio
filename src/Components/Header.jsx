@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import "../Styles/Header.scss"
-import ahuziWisdomResume from "../Assets/Wisdom_Ahuzi_CV_Grad.pdf";
+import ahuziWisdomResume from "../Assets/Wisdom_Ahuzi_Internship_CV.pdf";
 import { IconListDashes, IconCopyright, IconX, IconGithubLogo, IconTwitterLogo, IconLinkedinLogo, IconInstagramLogo } from '@vtex/phosphor-icons'
 const Header = () => {
   const wisdom = "<Wisdom/>"
